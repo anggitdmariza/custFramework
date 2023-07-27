@@ -1,0 +1,14 @@
+*.gradle
+bin
+Reports
+Libs
+output
+!output/.gitkeep
+build
+.classpath
+.project
+*.prj
+.cache/
+.settings/
+settings/
+*.properties
