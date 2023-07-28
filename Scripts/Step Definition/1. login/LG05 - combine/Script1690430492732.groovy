@@ -17,6 +17,4 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-for (int i=0;i<2;i++) {
 	CustomKeywords.'saucedemo.logintest.logtest'()
-}
