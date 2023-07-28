@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>CO02 - cancel checkout to cart</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>a22818ac-3799-493b-8841-dc59da63e5d1</testCaseGuid>
-</TestCaseEntity>
