@@ -23,7 +23,72 @@ import internal.GlobalVariable
 public class logintest {
 	@Keyword
 	public void logtest() {
-		WebUI.navigateToUrl('https://www.saucedemo.com/')
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/Verify Element Login'), [:], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/input username'), [('username') : 'standard_user'], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/input password - incorrect'), [('notpassword') : 'swaglabs'], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/click button login'), [:], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/read error message'), [('expected') : 'Epic sadface: Username and password do not match any user in this service'], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.refresh()
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/input username'), [('username') : 'standard_user'], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/input password - incorrect'), [('notpassword') : ''], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/click button login'), [:], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/read error message'), [('expected') : 'Epic sadface: Password is required'], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.refresh()
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/Verify Element Login'), [:], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/input username - incorrect'), [('notusername') : ''], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/input password'), [('password') : 'secret_sauce'], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/click button login'), [:], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/read error message'), [('expected') : 'Epic sadface: Username is required'], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.refresh()
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/input username - incorrect'), [('notusername') : 'swaglabs'], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/input password'), [('password') : 'secret_sauce'], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/click button login'), [:], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/read error message'), [('expected') : 'Epic sadface: Username and password do not match any user in this service'], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.refresh()
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/Verify Element Login'), [:], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/input username - incorrect'), [('notusername') : 'swag'], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/input password - incorrect'), [('notpassword') : 'labs'], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/click button login'), [:], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/read error message'), [('expected') : 'Epic sadface: Username and password do not match any user in this service'], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.refresh()
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/input username - incorrect'), [('notusername') : ''], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/input password - incorrect'), [('notpassword') : ''], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/click button login'), [:], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.callTestCase(findTestCase('Pages/1. login/read error message'), [('expected') : 'Epic sadface: Username is required'], FailureHandling.STOP_ON_FAILURE)
+
+		WebUI.refresh()
 
 		WebUI.callTestCase(findTestCase('Pages/1. login/Verify Element Login'), [:], FailureHandling.STOP_ON_FAILURE)
 
@@ -36,79 +101,5 @@ public class logintest {
 		WebUI.callTestCase(findTestCase('Pages/2. product/Verify Element product page'), [:], FailureHandling.STOP_ON_FAILURE)
 
 		WebUI.callTestCase(findTestCase('Pages/verify element footer'), [:], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.navigateToUrl('https://www.saucedemo.com/')
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/Verify Element Login'), [:], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/input username'), [('username') : 'standard_user'], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/input password - incorrect'), [('notpassword') : 'swaglabs'], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/click button login'), [:], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/read error message'), [('expected') : 'Epic sadface: Username and password do not match any user in this service'],
-		FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.refresh()
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/input username'), [('username') : 'standard_user'], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/input password - incorrect'), [('notpassword') : ''], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/click button login'), [:], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/read error message'), [('expected') : 'Epic sadface: Password is required'],
-		FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.refresh()
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/Verify Element Login'), [:], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/input username - incorrect'), [('notusername') : ''], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/input password'), [('password') : 'secret_sauce'], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/click button login'), [:], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/read error message'), [('expected') : 'Epic sadface: Username is required'],
-		FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.refresh()
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/input username - incorrect'), [('notusername') : 'swaglabs'], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/input password'), [('password') : 'secret_sauce'], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/click button login'), [:], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/read error message'), [('expected') : 'Epic sadface: Username and password do not match any user in this service'],
-		FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.refresh()
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/Verify Element Login'), [:], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/input username - incorrect'), [('notusername') : 'swag'], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/input password - incorrect'), [('notpassword') : 'labs'], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/click button login'), [:], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/read error message'), [('expected') : 'Epic sadface: Username and password do not match any user in this service'],
-		FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.refresh()
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/input username - incorrect'), [('notusername') : ''], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/input password - incorrect'), [('notpassword') : ''], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/click button login'), [:], FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.callTestCase(findTestCase('Pages/1. login/read error message'), [('expected') : 'Epic sadface: Username is required'],
-		FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.refresh()
 	}
 }
