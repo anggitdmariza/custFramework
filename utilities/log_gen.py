@@ -1,0 +1,13 @@
+import logging
+
+
+class LogsGen:
+    @staticmethod
+    def logs():
+        logging.basicConfig(filename="../Logs/nopcomm.logs",
+                            format='%(asctime)s: %(levelname)s: %(message)s',
+                            datefmt='%m-%d-%y %I:%M:%S %p',
+                            filemode='w', force=True)
+        logger = logging.getLogger()
+        logger.setLevel(logging.INFO)
+        return logger
