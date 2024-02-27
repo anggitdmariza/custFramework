@@ -7,7 +7,7 @@ from utilities.read_prop import ReadConfig
 class TestLoginDDT:
     baseurl = ReadConfig.get_url()
     path = "../testData/login_data.xlsx"
-    logger = LogsGen.logs()
+    logger = LogsGen.ddt_logs()
 
     def test_ddt_001_login(self, setup):
         self.logger.info("Starting test_ddt_001_login")
