@@ -25,6 +25,7 @@ class TestLogin:
         assert "Dashboard / nopCommerce administration" in act_title
         self.driver.save_screenshot('./Screenshots/dashboard.png')
         self.logger.info("Succesfully get into dashboard page")
+        self.lp.click_logout()
         self.driver.close()
         self.logger.info("End test_001_login")
 
