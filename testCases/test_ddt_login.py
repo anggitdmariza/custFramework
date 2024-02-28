@@ -64,6 +64,7 @@ class TestLoginDDT:
             assert False
 
         self.logger.info("End test_001_login")
+        self.driver.close()
 
 
 if __name__ == "__main__":

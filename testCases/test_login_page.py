@@ -29,6 +29,13 @@ class TestLogin:
         self.driver.close()
         self.logger.info("End test_001_login")
 
+    def try_login(self, setup):
+        self.driver = setup
+        self.driver.get(self.baseurl)
+        self.lp = pageObjects.login_page.Login(self.driver)
+        self.lp.set_username(self.username)
+        self.lp.set_password(self.password)
+        self.lp.click_login()
 
 if __name__ == "__main__":
     TestLogin()
